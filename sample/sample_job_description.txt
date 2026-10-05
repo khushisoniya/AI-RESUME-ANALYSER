@@ -1,0 +1,1 @@
+We are hiring a Python Developer intern. You will build REST API services with Flask, work with SQL and MySQL databases, and use Git and GitHub daily. Experience with machine learning, NLP, pandas, numpy and scikit-learn is a strong plus. Knowledge of data structures, algorithms and Docker is preferred. Good communication and teamwork are expected.

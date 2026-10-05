@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redline: Resume Analyser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="/" aria-label="Redline home"><span class="mark">R</span>Redline<small>Resume Analyser</small></a>
+</header>
+
+<main>
+<section id="upload">
+  <div class="hero">
+    <p class="kicker">Resume + job description &rarr; score</p>
+    <h1>Read your resume the way a screener does.</h1>
+    <p class="lede">Upload a PDF or DOCX. Redline extracts your details, checks the structure, and compares the text with a job description using TF-IDF and cosine similarity. You get a score, the skills you are missing, and edits to make.</p>
+    <ol class="steps">
+      <li><b>01</b> Upload your resume <span>PDF or DOCX, up to 5 MB</span></li>
+      <li><b>02</b> Paste a job description <span>optional, enables matching</span></li>
+      <li><b>03</b> Read the markup <span>score, gaps, suggestions</span></li>
+    </ol>
+  </div>
+  <div class="sheet">
+    <label id="drop" class="drop" for="file" tabindex="0">
+      <input id="file" type="file" accept=".pdf,.docx" hidden>
+      <span class="plus">+</span>
+      <strong id="dropTitle">Drop your resume here</strong>
+      <span id="dropSub">or click to browse &middot; .pdf .docx</span>
+    </label>
+    <div class="jd"><div class="jdhead"><label for="jd">Job description <em>(optional)</em></label><button type="button" id="sample" class="link">Use a sample</button></div>
+    <textarea id="jd" rows="6" placeholder="Paste the job posting you are applying to..."></textarea></div>
+    <p id="err" class="err" role="alert" hidden></p>
+    <button id="go" class="btn" disabled>Analyse resume</button>
+  </div>
+</section>
+
+<section id="loading" hidden aria-live="polite">
+  <div class="scan"><div class="line"></div><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <p class="kicker">Working</p><h2>Parsing and scoring your resume&hellip;</h2>
+</section>
+
+<section id="results" hidden></section>
+</main>
+<footer>Scores come from rule-based checks and TF-IDF cosine similarity. No trained model is used and nothing is stored on the server.</footer>
+<script src="app.js"></script>
+</body>
+</html>
